@@ -8,8 +8,9 @@ import Home from "./components/Home";
 import { useDispatch } from "react-redux";
 import { asyncCurrentUser } from "./actions/userAction";
 import Product from "./components/Product";
-import CreateProduct from "./components/CreateProduct";
+import CreateProduct from "./admin/CreateProduct";
 import { asyncLoadProducts } from "./actions/productAction";
+import ProductDetails from "./components/ProductDetails";
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Product/>} />
+        <Route path="/product/:id" element={<ProductDetails/>} />
         <Route path="/admin/create-product" element={<CreateProduct/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Register/>} />

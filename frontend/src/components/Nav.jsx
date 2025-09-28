@@ -37,16 +37,18 @@ const Nav = () => {
           >
             Products
           </NavLink>
-          <NavLink
-            to="/admin/create-product"
-            className={({ isActive }) =>
-              `animated-underline text-lg transition-colors duration-200 ${
-                isActive ? "active" : "text-gray-700"
-              }`
-            }
-          >
-            create product
-          </NavLink>
+          {user?.isAdmin && (
+            <NavLink
+              to="/admin/create-product"
+              className={({ isActive }) =>
+                `animated-underline text-lg transition-colors duration-200 ${
+                  isActive ? "active" : "text-gray-700"
+                }`
+              }
+            >
+              create product
+            </NavLink>
+          )}
         </div>
         <span>
           {user ? (

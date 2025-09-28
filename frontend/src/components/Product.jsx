@@ -1,14 +1,16 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
   const products = useSelector((state) => state.productReducer.products);
-
+  const navigate = useNavigate();
   return (
     <div className="flex flex-row flex-wrap gap-6 justify-center">
       {products.map((product) => (
         <div
+          onClick={() => navigate(`/product/${product.id}`)}
           key={product.id}
-          className="bg-gray-300 shadow-lg rounded-lg p-4 w-70 h-96 flex flex-col justify-between overflow-hidden"
+          className="hover:cursor-pointer bg-gray-300 shadow-lg rounded-lg p-4 w-70 h-96 flex flex-col justify-between overflow-hidden"
         >
           <img
             src={product.image}
