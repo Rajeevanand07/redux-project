@@ -6,15 +6,15 @@ import Login from "./components/Login";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncGetUser } from "./actions/userAction";
+import { asyncCurrentUser } from "./actions/userAction";
 
 const App = () => {
-  const users = useSelector((state) => state.userReducer)
-  const dispatch = useDispatch()
-  console.log(users);
+  const activeUser = useSelector((state) => state.userReducer.user)
+  console.log("activeUser:",activeUser?.name);
   
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(asyncGetUser())
+    dispatch(asyncCurrentUser())
   },[dispatch])
   return (
     <>
