@@ -11,11 +11,13 @@ import Product from "./components/Product";
 import CreateProduct from "./admin/CreateProduct";
 import { asyncLoadProducts } from "./actions/productAction";
 import ProductDetails from "./components/ProductDetails";
+import PageNotFound from "./components/PageNotFound";
+import Profile from "./components/Profile";
+import AuthWrapper from "./components/AuthWrapper";
 
 const App = () => {
-
-  
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(asyncCurrentUser())
     dispatch(asyncLoadProducts())
@@ -26,10 +28,24 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Product/>} />
-        <Route path="/product/:id" element={<ProductDetails/>} />
-        <Route path="/admin/create-product" element={<CreateProduct/>} />
+        <Route path="/profile" element={
+          <AuthWrapper>
+            <Profile/>
+          </AuthWrapper>
+        } />
+        <Route path="/product/:id" element={
+          <AuthWrapper>
+            <ProductDetails/>
+          </AuthWrapper>
+        } />
+        <Route path="/admin/create-product" element={
+          <AuthWrapper>
+            <CreateProduct/>
+          </AuthWrapper>
+        } />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Register/>} />
+        <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </>
   )

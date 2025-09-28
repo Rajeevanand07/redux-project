@@ -37,6 +37,18 @@ const Nav = () => {
           >
             Products
           </NavLink>
+          {user && (
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                `animated-underline text-lg transition-colors duration-200 ${
+                  isActive ? "active" : "text-gray-700"
+                }`
+              }
+            >
+              Profile
+            </NavLink>
+          )}
           {user?.isAdmin && (
             <NavLink
               to="/admin/create-product"

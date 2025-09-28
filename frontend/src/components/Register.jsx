@@ -12,6 +12,7 @@ const Register = () => {
 
   const handleFrom = (data) => {
     data.isAdmin = false;
+    data.cart = [];
     toast.info("Registered Successfully");
     localStorage.setItem("user", JSON.stringify(data));
     dispatch(asyncPostUser(data));
