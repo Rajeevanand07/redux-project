@@ -20,6 +20,13 @@
       "email": "test@example.com",
       "pass": "123456",
       "isAdmin": false
+    },
+    {
+      "id": "c6d2",
+      "name": "admin",
+      "email": "admin@gamil.com",
+      "pass": "123456",
+      "isAdmin": false
     }
   ],
   "products": [
