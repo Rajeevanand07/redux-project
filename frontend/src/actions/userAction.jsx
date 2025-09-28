@@ -2,10 +2,10 @@ import { toast } from "react-toastify";
 import axios from "../api/axiosConfig";
 import { loadUser } from "../reducers/userSlice";
 
-export const asyncPostUser = (user) => async () => {
+export const asyncPostUser = (user) => async (dispatch) => {
   try{
     const res = await axios.post('/users',user);
-    console.log(res.data);
+    dispatch(loadUser(res.data))
   }
   catch(err){
     console.log(err);
@@ -42,7 +42,6 @@ export const asyncLogoutUser = () => async (dispatch) => {
 export const asyncCurrentUser = () => async (dispatch) => {
   try{
     const currentUser = JSON.parse(localStorage.getItem("user"))
-    console.log(currentUser);
     if (currentUser) dispatch(loadUser(currentUser));
     else console.log("login not found");
   }

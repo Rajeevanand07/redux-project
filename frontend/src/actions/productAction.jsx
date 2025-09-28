@@ -1,15 +1,22 @@
 import axios from "../api/axiosConfig";
 import { loadProduct } from "../reducers/productSlice";
 
-const productAction = () => async (dispatch) => {
-  try{
-    // console.log(getState());
-    const res = await axios.get('/products');
-    dispatch(loadProduct(res.data));
-  }
-  catch(err){
-    console.log(err);
+export const asyncLoadProducts = () => async (dispatch) => {
+  try {
+    const {data} = await axios.get('/products');
+    dispatch(loadProduct(data))
+  } catch (error) {
+    console.log(error);
+    
   }
 }
 
-export default productAction
+export const asyncCreateProduct = (product) => async (dispatch) => {
+  try {
+    const {data} = await axios.post('/products',product);
+    dispatch(asyncLoadProducts());
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}

@@ -2,19 +2,21 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { asyncPostUser } from "../actions/userAction";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { register, handleSubmit, reset } = useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   const handleFrom = (data) => {
     data.isAdmin = false;
-    // console.log(data);
     toast.info("Registered Successfully");
     localStorage.setItem("user", JSON.stringify(data));
     dispatch(asyncPostUser(data));
     reset();
+    navigate("/");
   }
 
   return (

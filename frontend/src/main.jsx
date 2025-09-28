@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/Store.jsx";
 import { ToastContainer} from "react-toastify"
+import './index.css'
 
 createRoot(document.getElementById("root")).render(
   <Provider store = {store}>

@@ -1,16 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { asyncLoginUser, asyncLogoutUser } from "../actions/userAction";
+import { Link, useNavigate } from "react-router-dom";
+import { asyncLoginUser } from "../actions/userAction";
 
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   const handleFrom = (data) => {
     dispatch(asyncLoginUser(data))
     reset()
+    navigate("/")
   }
 
   return (
@@ -31,9 +33,6 @@ const Login = () => {
         />
         <button className="px-6 rounded-lg text-lg py-2 bg-gray-700 text-white cursor-pointer">
           Login
-        </button>
-        <button type="button" onClick={()=> dispatch(asyncLogoutUser())} className="px-6 rounded-lg text-lg py-2 bg-gray-700 text-white cursor-pointer">
-          Logout
         </button>
         <p className="flex justify-center items-center">Don't have an account? <Link className="border-b-2 text-blue-500 ml-1 hover:text-blue-300 transition-all ease-in-out duration-200" to="/signup">register</Link></p>
       </form>
