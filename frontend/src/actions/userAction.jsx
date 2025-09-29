@@ -50,3 +50,14 @@ export const asyncCurrentUser = () => async (dispatch) => {
   }
 }
 
+export const asyncUpdateUser = (user) => async (dispatch) => {
+  try {
+    const {data} = await axios.put(`/users/${user.id}`,user);
+    dispatch(loadUser(data))
+    localStorage.setItem("user", JSON.stringify(data));    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+

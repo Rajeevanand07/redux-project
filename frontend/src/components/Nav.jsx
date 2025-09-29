@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { asyncLogoutUser } from "../actions/userAction";
+import e_img1 from "/e_img1.png";
 
 const Nav = () => {
   const user = useSelector((state) => state.userReducer.user);
@@ -14,8 +15,10 @@ const Nav = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center p-5">
-        <span className="text-3xl">Logo</span>
+      <div className="flex justify-between items-center px-20 py-5">
+        <span className="w-15 overflow-hidden">
+          <img className="h-[100%] w-[100%] object-cover" src={e_img1} alt="" />
+        </span>
         <div className="flex gap-[40px] p-5 justify-center items-center hover:cursor-pointer">
           <NavLink
             to="/"

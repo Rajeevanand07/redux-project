@@ -5,28 +5,78 @@
       "name": "rajeev anand",
       "email": "anandrajeev1234@gmail.com",
       "pass": "123456",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": [
+        {
+          "product": {
+            "id": "Khmf6kS4wCvLk85gGLxlD",
+            "title": "rolex watch",
+            "price": "699",
+            "description": "Launched in 1963, the Cosmograph Daytona has transcended its status in the world of watchmaking to become an icon\n",
+            "category": "Watch",
+            "image": "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          "quantity": 3
+        },
+        {
+          "product": {
+            "id": "1",
+            "title": "Backpack, Fit 15 Laptop",
+            "price": "109",
+            "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+          },
+          "quantity": 3
+        },
+        {
+          "product": {
+            "id": "g6wMQQmeYBP0bqblhwbi_",
+            "title": "iphone 15",
+            "price": "1000",
+            "description": "this is juat and iphone 15 pro max",
+            "category": "mobile",
+            "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": "5fa7",
       "name": "rajeev",
       "email": "test@example.com",
       "pass": "123456",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": []
     },
     {
       "id": "c6d2",
       "name": "admin",
       "email": "admin@gamil.com",
       "pass": "123456",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": [
+        {
+          "product": {
+            "id": "Khmf6kS4wCvLk85gGLxlD",
+            "title": "rolex watch",
+            "price": "699",
+            "description": "Launched in 1963, the Cosmograph Daytona has transcended its status in the world of watchmaking to become an icon\n",
+            "category": "Watch",
+            "image": "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": "ca73",
       "name": "idk2",
       "email": "test@example.com",
       "pass": "123456",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": []
     }
   ],
   "products": [
@@ -36,8 +86,7 @@
       "price": "109",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-      "cart":[]
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
     },
     {
       "id": "g6wMQQmeYBP0bqblhwbi_",
@@ -45,8 +94,7 @@
       "price": "1000",
       "description": "this is juat and iphone 15 pro max",
       "category": "mobile",
-      "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "cart":[]
+      "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "Khmf6kS4wCvLk85gGLxlD",
@@ -54,9 +102,86 @@
       "price": "699",
       "description": "Launched in 1963, the Cosmograph Daytona has transcended its status in the world of watchmaking to become an icon\n",
       "category": "Watch",
-      "image": "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "cart":[]
+      "image": "https://images.unsplash.com/photo-1639006570490-79c0c53f1080?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "TTreu8lCvgueB5pT2SjKq",
+      "title": "mi tv",
+      "price": "380",
+      "description": "this is just a normal tv",
+      "category": "tv",
+      "image": "https://plus.unsplash.com/premium_photo-1681236323432-3df82be0c1b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": "nn1",
+      "userId": "dd84",
+      "products": [
+        {
+          "id": "1",
+          "title": "Backpack, Fit 15 Laptop",
+          "price": "109",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          "category": "men's clothing",
+          "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "berf7",
+      "userId": "5fa7",
+      "products": [
+        {
+          "id": "1",
+          "title": "Backpack, Fit 15 Laptop",
+          "price": "109",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          "category": "men's clothing",
+          "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+          "quantity": 2
+        },
+        {
+          "id": "g6wMQQmeYBP0bqblhwbi_",
+          "title": "iphone 15",
+          "price": "1000",
+          "description": "this is juat and iphone 15 pro max",
+          "category": "mobile",
+          "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "TTreu8lCvgueB5pT2SjKq",
+      "title": "mi tv",
+      "price": "380",
+      "description": "this is just a normal tv",
+      "category": "tv",
+      "image": "https://plus.unsplash.com/premium_photo-1681236323432-3df82be0c1b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "g6wMQQmeYBP0bqblhwbi_",
+      "title": "iphone 15",
+      "price": "1000",
+      "description": "this is juat and iphone 15 pro max",
+      "category": "mobile",
+      "image": "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=781&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "d68f",
+      "userId": "dd84",
+      "products": []
+    },
+    {
+      "id": "76b7",
+      "userId": "dd84",
+      "products": [
+        {
+          "id": "Khmf6kS4wCvLk85gGLxlD"
+        }
+      ]
+    }
+  ]
 }

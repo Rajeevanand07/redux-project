@@ -1,15 +1,36 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateProduct from "../admin/UpdateProduct";
+import { asyncUpdateUser } from "../actions/userAction";
+import { toast } from "react-toastify";
+
 
 const ProductDetails = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const product = useSelector(
     (state) =>
       state.productReducer.products.find((prod) => prod.id === id)
   );
   const user = useSelector((state) => state.userReducer.user);
+
+
+  const addToCartHandler = () => {
+    const copyUser = {...user, cart:[...user.cart]};
+    const x = copyUser.cart.findIndex(item => item.product.id === product.id); 
+    
+    if(x == -1){
+      copyUser.cart.push({product, quantity:1});
+    }
+    else{
+      copyUser.cart[x] ={
+        product,
+        quantity: copyUser.cart[x].quantity + 1
+      };
+    }
+    dispatch(asyncUpdateUser(copyUser));
+    toast("Product added to cart");
+  }
 
   if (!product) {
     return (
@@ -39,7 +60,7 @@ const ProductDetails = () => {
           </div>
           <div className="flex items-center justify-between mt-6">
             <span className="text-2xl font-bold text-purple-700">${product.price}</span>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg shadow transition duration-200">
+            <button onClick={()=>addToCartHandler()} className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg shadow transition duration-200">
               Add to Cart
             </button>
           </div>

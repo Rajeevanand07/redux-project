@@ -1,15 +1,23 @@
 import axios from "../api/axiosConfig";
 import { loadCart } from "../reducers/cartSlice";
 
-const cartAction = () => async (dispatch) => {
-  try{
-    // console.log(getState());
-    const res = await axios.get('/carts');
-    dispatch(loadCart(res.data));
-  }
-  catch(err){
-    console.log(err);
+export const asyncCart = (userId) => async (dispatch) => {
+  try {
+    const {data} = await axios.get(`/carts?userId=${userId}`);
+    dispatch(loadCart(data[0]));
+  } catch (error) {
+    console.log(error);
+    
   }
 }
 
-export default cartAction
+export const asyncAddToCart = (product) => async () => {
+  try {
+    const {data} = await axios.post('/carts',product);
+    
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
