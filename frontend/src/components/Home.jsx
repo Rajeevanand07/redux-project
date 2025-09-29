@@ -21,12 +21,12 @@ const Home = () => {
         </div>
       </div>
       {/* Right Image */}
-      <div className="relative flex-1 flex justify-end">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-[420px] rounded-full -z-10 blur-[1px]" />
+      <div className="relativeflex justify-end">
+        <div className="absolute right-0 top-1/2 w-[50vw] rounded-full" />
         <img
           src={imm}
           alt="Shopping"
-          className="w-full h-[420px] object-cover rounded-3xl"
+          className="w-full object-cover rounded-3xl"
         />
       </div>
     </div>

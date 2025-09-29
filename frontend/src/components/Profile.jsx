@@ -1,16 +1,8 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { asyncCart } from "../actions/cartAction";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   const user = useSelector((state) => state.userReducer.user);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (user?.id) {
-      dispatch(asyncCart(user.id));
-    }
-  }, [dispatch, user?.id]);
 
   if (!user) {
     return (
