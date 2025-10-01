@@ -1,19 +1,21 @@
-import { useEffect } from "react"
+import { lazy, useEffect } from "react"
 import Register from "./components/Register";
 import './App.css'
-import Nav from "./components/Nav";
 import Login from "./components/Login";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
 import { useDispatch } from "react-redux";
 import { asyncCurrentUser } from "./actions/userAction";
-import Product from "./components/Product";
-import CreateProduct from "./admin/CreateProduct";
 import { asyncLoadProducts } from "./actions/productAction";
-import ProductDetails from "./components/ProductDetails";
-import PageNotFound from "./components/PageNotFound";
-import Profile from "./components/Profile";
-import AuthWrapper from "./components/AuthWrapper";
+
+const Nav = lazy(() => import('./components/Nav'));
+const Home = lazy(() => import('./components/Home'));
+const Product = lazy(() => import('./components/Product'));
+const CreateProduct = lazy(() => import('./admin/CreateProduct'));
+const ProductDetails = lazy(() => import('./components/ProductDetails'));
+const PageNotFound = lazy(() => import('./components/PageNotFound'));
+const Profile = lazy(() => import('./components/Profile'));
+const AuthWrapper = lazy(() => import('./components/AuthWrapper'));
+const UnAuthWrapper = lazy(() => import('./components/UnAuthWrapper'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -43,8 +45,16 @@ const App = () => {
             <CreateProduct/>
           </AuthWrapper>
         } />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Register/>} />
+        <Route path="/login" element={
+          <UnAuthWrapper>
+            <Login/>
+          </UnAuthWrapper>
+        } />
+        <Route path="/signup" element={
+          <UnAuthWrapper>
+            <Register/>
+          </UnAuthWrapper>
+        } />
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </>
